@@ -36,6 +36,95 @@
              justify-content: center;
              align-items: center;
          }
+        /* Add styles for multiple images */
+.myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: auto;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 100px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
      </style>
    </head>
    <body>
@@ -73,6 +162,30 @@
        </object>
     </div>
       <!--header section end -->
+      <div class="blog_section layout_padding">
+         <div class="container">
+            <h1 class="blog_taital"><span class="our_text">activity-diagram</span> database-diagram</h1>
+            <p class="blog_text">Activity diagram và Database diagram. </p>
+            <div class="services_section_2 layout_padding">
+               <div class="row">
+                  <div class="col-md-4">
+                <!-- Add the first image -->
+<img class="myImg" src="images/activity.jpg" alt="Activity">
+</div>
+<!-- Add the second image -->
+<div class="col-md-4">
+   <img class="myImg" src="images/db.jpg" alt="Database">
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+   <span class="close">&times;</span>
+   <img class="modal-content" id="img01">
+   <div id="caption"></div>
+ </div>
+                </div>
+            </div>
+         </div>
+      </div>
       <!--services section start -->
       <div class="blog_section layout_padding">
          <div class="container">
@@ -81,44 +194,19 @@
             <div class="services_section_2 layout_padding">
                <div class="row">
                   <div class="col-md-4">
-                   <a href="images/thongtinve.png">
-                     <div class="box_main">
-                        <div class="student_bg"><img src="images/thongtinve.png" class="student_bg"></div>
-                        <h4 class="hannery_text">Thông tin vé</h4>
-                     </div>
-                   </a>
+                     <img class="myImg" src="images/thongtinve.png" alt="Thongtinve">
                   </div>
                   <div class="col-md-4">
-                     <a href="images/giohang.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/giohang.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Giỏ hàng</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/giohang.png" alt="giohang">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/thongtincanhan.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/thongtincanhan.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Thông tin cá nhân</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/thongtincanhan.png" alt="thongtincanhan">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/thongtinhoadon.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/thongtinhoadon.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Thông tin hóa đơn</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/thongtinhoadon.png" alt="thongtinhoadon">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/muave.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/muave.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Mua vé</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/muave.png" alt="muave">
                     </div>
                </div>
             </div>
@@ -131,52 +219,22 @@
             <div class="services_section_2 layout_padding">
                <div class="row">
                   <div class="col-md-4">
-                   <a href="images/quanlykhachhang.png">
-                     <div class="box_main">
-                        <div class="student_bg"><img src="images/quanlykhachhang.png" class="student_bg"></div>
-                        <h4 class="hannery_text">Thông tin vé</h4>
-                     </div>
-                   </a>
+                     <img class="myImg" src="images/quanlykhachhang.png" alt="quanlykhachhang">
                   </div>
                   <div class="col-md-4">
-                     <a href="images/quanlyhoadon.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/quanlyhoadon.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Quản lý hóa đơn</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/quanlyhoadon.png" alt="quanlyhoadon">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/quanlythucung.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/quanlythucung.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Quản lý thú cưng</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/quanlythucung.png" alt="quanlythucung">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/quanlykhachravao.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/quanlykhachravao.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Quản lý khách ra vào</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/quanlykhachravao.png" alt="quanlykhachravao">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/thongtintaikhoan.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/thongtintaikhoan.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Thông tin tài khoản</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/thongtintaikhoan.png" alt="thongtintaikhoan">
                     </div>
                     <div class="col-md-4">
-                     <a href="images/thaydoimatkhau.png">
-                       <div class="box_main">
-                          <div class="student_bg"><img src="images/thaydoimatkhau.png" class="student_bg"></div>
-                          <h4 class="hannery_text">Thay đổi mật khẩu</h4>
-                       </div>
-                     </a>
+                     <img class="myImg" src="images/thaydoimatkhau.png" alt="thaydoimatkhau">
                     </div>
                </div>
             </div>
@@ -248,5 +306,33 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
+      <script>
+         // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get all images with the class "myImg"
+var images = document.getElementsByClassName("myImg");
+
+// Get the modal image and caption elements
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+// Loop through each image and attach click event
+for (var i = 0; i < images.length; i++) {
+  images[i].onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+         </script>
    </body>
 </html>
